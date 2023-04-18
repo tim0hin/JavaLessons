@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class sem1_task4 {
     public static void main(String[] args) {
+        // Реализовать простой калькулятор (введите первое число, 
+        // введите второе число, введите требуемую операцию, ответ)
+        
         Scanner iScan = new Scanner(System.in);
         System.out.println("Введите число A: ");
         double a = iScan.nextDouble();
