@@ -1,0 +1,2 @@
+апр. 18, 2023 10:34:19 PM sem2 saveToFile
+WARNING: g\g\g\g\gtest.txt (Системе не удается найти указанный путь)
