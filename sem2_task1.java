@@ -1,3 +1,10 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Logger;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.SimpleFormatter;
+
 public class sem2_task1 {
     public static void main(String[] args) {
         /*
@@ -45,10 +52,35 @@ public class sem2_task1 {
         sb.append(tempStr);
         }
 
-        System.out.println(sb);
+        saveToFile(sb);
+        //System.out.println(sb);
+
         // for (int i = 0; i < strArray.length; i++){   //debug
         //     System.out.println(strArray[i]);
         // }
         
+    }
+
+    static void saveToFile(StringBuilder sb) {
+        Logger logger = Logger.getAnonymousLogger();
+        FileHandler fileHandler = null;
+        try {
+            fileHandler = new FileHandler("log.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SimpleFormatter formatter = new SimpleFormatter();
+        fileHandler.setFormatter(formatter);
+        logger.addHandler(fileHandler);
+        String path = "s2_t2.txt";
+        try (FileWriter fileWriter = new FileWriter(path, false)) {
+            fileWriter.append(sb);
+            fileWriter.flush();
+            System.out.println("Файл успешно записан!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.log(Level.WARNING, e.getMessage());
+        }
+        fileHandler.close();
     }
 }
