@@ -65,14 +65,14 @@ public class sem2_task1 {
         Logger logger = Logger.getAnonymousLogger();
         FileHandler fileHandler = null;
         try {
-            fileHandler = new FileHandler("log.txt");
+            fileHandler = new FileHandler("log_s2_t1.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
         SimpleFormatter formatter = new SimpleFormatter();
         fileHandler.setFormatter(formatter);
         logger.addHandler(fileHandler);
-        String path = "s2_t2.txt";
+        String path = "s2_t1.txt";
         try (FileWriter fileWriter = new FileWriter(path, false)) {
             fileWriter.append(sb);
             fileWriter.flush();
