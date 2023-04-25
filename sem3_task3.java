@@ -3,6 +3,9 @@ import java.util.Collections;
 
 public class sem3_task3 {
     public static void main(String[] args) {
+        // Заполнить список названиями планет Солнечной системы
+        //  в произвольном порядке с повторениями. 
+        // Вывести название каждой планеты и количество его повторений в списке.
         ArrayList<String> listPlanet = new ArrayList<>();
         getPlanets(listPlanet);
         System.out.println(listPlanet);
